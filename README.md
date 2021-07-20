@@ -9,3 +9,4 @@ Neuroeconomics seeks to explain human decision making, the ability of an agent t
 #### WEEK 2: Reading about the evolutionary game theory, learning how to work with Pytorch.
 #### WEEK 3: Designing a model where agents evolve based on certain rules pertaining to reciprocal altruism.
 #### WEEK 4: Encoding this model on Python.
+#### WEEK 5: *Midterm Evaluation*
