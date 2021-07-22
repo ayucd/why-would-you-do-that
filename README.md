@@ -6,7 +6,7 @@ Neuroeconomics seeks to explain human decision making, the ability of an agent t
 
 # Project Timeline
 #### WEEK 1: Read about reciprocal altruism and ant-colony-optimization algorithm.
-#### WEEK 2: Read about the evolutionary game theory, learning how to work with Pytorch.
+#### WEEK 2: Read about the evolutionary game theory; learnt how to work with Pytorch.
 #### WEEK 3: Designed a model where agents evolve based on certain rules pertaining to reciprocal altruism.
 #### WEEK 4: Encoded this model on Python.
 #### WEEK 5: *Midterm Evaluation*
