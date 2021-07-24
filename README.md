@@ -39,9 +39,9 @@ Our aim from the Python implementation of this multi-agent environment is to fin
 * The agent that is close to the food gets an advantage over grabbing the food. 
 * No limit is set over the quantity of food that an individual could acquire. This is done deliberately to observe the sharing strategies that the agents will adopt at the end of the day.
 * In cases of conflict, we refer to the priority of directions, which we accomplished by using the breadth-first search (BFS) algorithm. The priority order of the directions is:
-''' 
+ ``` 
 dirn =[(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,1),(-1,-1)]
-'''
+ ```
 
 
 
