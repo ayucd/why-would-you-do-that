@@ -127,6 +127,15 @@ return random.choices(strat_names,prob)[0]
 ```
 So, we assume that the next state is correct.
 
+A. **Training the s-agents :** Larger number of s-agents are employed to obtain an optimal policy with accuracy. The code is iterated n=44 times and these n iterations are further repeated 5 times to generate a larger amount of data. 
+B. **Testing the s-agents :** A smaller number of s-agents needed. The code is iterated n=44 times.
+
+*While testing, our optimal strategy may perform a bit worse but its performance should be largely satisfactory.*
+
+
+
+
+
 
 
 
