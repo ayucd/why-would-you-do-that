@@ -12,6 +12,7 @@ Neuroeconomics seeks to explain human decision making, the ability of an agent t
 5. [PART A](#part-a)
 6. [PART B](#part-b)
 7. [Conclusions](#conclusions)
+8. [References](#references)
 
 # Project Timeline
 
@@ -169,6 +170,9 @@ B- Strategy-wise population development in our environment:
 1. **The ALT strategy becomes vestigial to the special agents :** The ALT strategy that the special agent “can” take, implies no computational meaning when we are actually iterating the model. This is because the agent is free to change its strategy and hence its decision to cooperate or not cooperate in the next iterations, and the possibility to actually “alternate” its decision never really arrives.
 
 2. **The special agent learns a complex sharing-behaviour that is a mix of mostly AC and TFT.** Thus, we can say that our special agent has learnt to survive in an environment via mostly cooperating. The agent learns how to handle each agent within the environment with remarkable accuracy. While it learns to play TFT against AD agents and AC against TFT agents, it also learns that it should cooperate with other special agents.
+
+# References
+
 
  
 
