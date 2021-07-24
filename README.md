@@ -48,7 +48,9 @@ dirn = [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,1),(-1,-1)]
    * Case 2 : Greater than 1 food-value: If the agent has more than 1 unit of food, it can decide whether it will share its food or not based on its own strategy; and its decision will also be based upon the past strategies of the agent-at-mercy (needy agent).
    * Case 3 : Greater than 2 food-values: In this case, the agent is provided with the ability to reproduce. It can decide whether it will reproduce or not based on a fixed probability provided by us for the model.
 
-# PART A : Drawing conclusions on what sharing strategy thrives the best in our environment
+# PART A  
+##  This part tries to drawi conclusions on what sharing strategy thrives the best in our environment
+
 
 
 
