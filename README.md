@@ -150,6 +150,11 @@ B- Strategy-wise population development in our environment:
 
 ## PART A
 
+1. **Lack of a punishing mechanism gives rise to cheaters and decline of cooperators within the environment :** TFT strategy in the 1st model in this part assumed a good punishing mechanism for the cheaters, namely the AD agents and sometimes the ALT agents. This conclusion goes hand-in-hand with the conditions that define "reciprocal altruism", which was simulated via the modified (probabilistic) TFT strategy in Model 1. We know that for reciprocal altruism to flourish, it is necessary to have a proper "punishment" mechanism in place so that the detection of "cheaters" in the environment can be facilitated. 
+
+2. **Factors that may not be directly relevant to the act of cooperation (here, size), can affect the evolutionary pattern of the environment :** Regardless of the strategies used by the agents for cooperation, there may be other factors that can give them undue advantage over agents which lack them. In our case, it was the size of the agents, which got hard-coded inside our code that determined the probability with which an agent was likely to share its extra food. Thus, in a general multi-agent environment, seemingly irrelevant factors may prove to be disadvantageous for the agents that lack them.
+
+
 ## PART B
 
 
