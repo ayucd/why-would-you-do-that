@@ -63,6 +63,8 @@ The two models have different, but fixed probabilities for reproduction in Part 
 ```
 prob = (agent.size/(atmercy.size+agent.size))*agent.strat[0]*(atmercy.strat[-1] if atmercy.strat != [] else 1)
 ```
+After implementing the above mentioned on Python and reiterating the simulation on the 1st model 44 times while a bit lesser (40 times) on the 2nd model, we find ourselves being able to analyze the best strategies for both the models after the iterations. We are also able to figure out which size will be more favoured for survival in the long run for both models *(the number of iterations passed simultaneously represents the time that has passed in this particular environment.)*
+
 
 
 
