@@ -69,17 +69,32 @@ After implementing the above mentioned on Python and reiterating the simulation 
 
 **MODEL 1**
 
-A- Size-wise population development for Model 2 (repeated over 44 iterations):
+A- Size-wise population development for Model 1 (repeated over 44 iterations):
 
-![Size-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_sizewise.png)
+![Size-wise population development for Model 1](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_sizewise.png)
 
-*We can see that agents following AC and TFT grow in numbers with time. AD and ALT agents see a decline in numbers.*
+*We can see that agents following AC and TFT strategies grow in numbers with time. AD and ALT agents see a decline in numbers.*
 
-B- Strategy-wise population development for Model 2 (repeated over 44 iterations):
+B- Strategy-wise population development for Model 1 (repeated over 44 iterations):
+
+![Strategy-wise population development for Model 1](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_strategywise.png)
+
+*We observe that the environment favoured agents of Size 2 (that are larger, more altruistic towards Size 1) as the environment evolved with this model.*
+
+**MODEL 2**
+
+A- Size-wise population development for Model 2 (repeated over 40 iterations):
+
+![Size-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m2_sizewise.png)
+
+*We can see that agents following AD strategy grow in numbers with time. AC and ALT agents die down with time*
+
+B- Strategy-wise population development for Model 2 (repeated over 40 iterations):
 
 ![Strategy-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_strategywise.png)
 
-*We observe that the environment favoured agents of Size 2 (that are larger, more altruistic towards Size 1) as the environment evolved with this model.*
+*We can see that the agents of Size 1 tend to thrive in this model while the agents of Size 2 (the larger, more altruistic towards Size 1) tend to decline in population.*
+
 
 
 
