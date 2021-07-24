@@ -73,9 +73,13 @@ A- Size-wise population development for Model 2 (repeated over 44 iterations):
 
 ![Size-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_sizewise.png)
 
+*We can see that agents following AC and TFT grow in numbers with time. AD and ALT agents see a decline in numbers.*
+
 B- Strategy-wise population development for Model 2 (repeated over 44 iterations):
 
 ![Strategy-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_strategywise.png)
+
+*We observe that the environment favoured agents of Size 2 (that are larger, more altruistic towards Size 1) as the environment evolved with this model.*
 
 
 
