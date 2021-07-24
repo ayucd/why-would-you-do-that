@@ -132,6 +132,22 @@ So, we assume that the next state is correct.
 
 *While testing, our optimal strategy may perform a bit worse but its performance should be largely satisfactory.*
 
+### Observations
+
+A- Size-wise population development in our environment:
+
+![Size-wise population development in our environment](https://github.com/ayucd/why-would-you-do-that/blob/main/partB_sizewise.png)
+
+*This was expected since Size 1 agents do not exist in the environment anymore.*
+
+B- Strategy-wise population development in our environment:
+
+![Strategy-wise population development in our environment](https://github.com/ayucd/why-would-you-do-that/blob/main/partB_strategywise.png)
+
+*We see that the AC strategy thrives amongst the overall population, followed by the “intelligent” strategy and then by TFT. The ALT and AD strategies see a decline in their population as the environment evolves.*
+
+
+
 
 
 
