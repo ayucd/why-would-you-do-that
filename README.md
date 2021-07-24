@@ -69,7 +69,9 @@ After implementing the above mentioned on Python and reiterating the simulation 
 
 **MODEL 1**
 
+A: Size-wise population development for Model 2 (repeated over 44 iterations)
 ![Size-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m2_sizewise.png)
+
 
 
 
