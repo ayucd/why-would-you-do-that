@@ -49,7 +49,14 @@ dirn = [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,1),(-1,-1)]
    * Case 3 : Greater than 2 food-values: In this case, the agent is provided with the ability to reproduce. It can decide whether it will reproduce or not based on a fixed probability provided by us for the model.
 
 # PART A  
-##  This part tries to drawi conclusions on what sharing strategy thrives the best in our environment
+##  This part tries to draw conclusions on what sharing strategy thrives the best in our environment
+
+In this part of the project, all agents are following a fixed sharing policy throughout their lifespan. However, to understand the evolution of the agents better, we decided to split our simulation into two different models:
+
+1. **Model 1 :** Each agent is allowed to use any one of the four sharing strategies for its entire lifetime. There will be a low (but fixed) chance of reproduction for agents. 
+2. **Model 2 :** The TFT strategy cannot be used by the agents in this model. Thus, they can use only one of the three strategies for their entire lifespan. There will be a (comparatively) higher (and fixed) chance of reproduction for the agents in this simulation. Food quantity is less than that available for Model 1.
+
+Another notable decision-making parameter added in this part of the project is the size factor. For this, we are assuming that the agents are of two sizes: Size 1 and Size 2, such that Size 2 > Size 1. In both of these models, the agents of Size 2 are going to be selectively altruistic (more willing to share their food) towards needy agents of Size 1. Mathematically, this implies that the probability of an agent of Size 2 to share its food increases when it meets an agent of Size 1 than when it meets an agent of Size 2.
 
 
 
