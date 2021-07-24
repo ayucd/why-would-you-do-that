@@ -58,6 +58,14 @@ In this part of the project, all agents are following a fixed sharing policy thr
 
 Another notable decision-making parameter added in this part of the project is the size factor. For this, we are assuming that the agents are of two sizes: Size 1 and Size 2, such that Size 2 > Size 1. In both of these models, the agents of Size 2 are going to be selectively altruistic (more willing to share their food) towards needy agents of Size 1. Mathematically, this implies that the probability of an agent of Size 2 to share its food increases when it meets an agent of Size 1 than when it meets an agent of Size 2.
 
+### Python implementation 
+The two models have different, but fixed probabilities for reproduction in Part A. This means that every agent in both models has a fixed chance to reproduce. Following code determines the probability of sharing by an agent having more than 1 unit of food:
+```
+prob = (agent.size/(atmercy.size+agent.size))*agent.strat[0]*(atmercy.strat[-1] if atmercy.strat != [] else 1)
+```
+
+
+
 
 
 
