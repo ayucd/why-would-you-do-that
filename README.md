@@ -26,7 +26,7 @@ Neuroeconomics seeks to explain human decision making, the ability of an agent t
 
 # Background
 
-Rational decision-making in a multi-agent environment where kin-based altruism does not exist is governed by inferences drawn from the game theory, the social theory as well as conflict theories. Thus, we can say that if we understand these theories and strategies well, the decisions made by the agents can be predicted. Through this project, we are trying to understand the various rational decisions that can be made by an agent in a multi-agent environment by playing with the various modelling parameters. To do this, we set up an environment on Python with multiple agents suspended within it. We have completed this project in two parts (Part A and Part B) , keeping the same environment but changing the decision-making parameters, and each part provides us with thoughtful observations.
+Rational decision-making in a multi-agent environment where kin-based altruism does not exist is governed by inferences drawn from the game theory, the social theory as well as conflict theories. Thus, we can say that if we understand these theories and strategies well, the decisions made by the agents can be predicted. Through this project, we are trying to understand the nature of the various rational decisions that can be made by an agent in a multi-agent environment by playing with the various modelling parameters. To do this, we set up an environment on Python with multiple agents suspended within it. We have completed this project in two parts (Part A and Part B) , keeping the same environment but changing the decision-making parameters, and each part provides us with thoughtful observations.
 
 # The Environment
 
