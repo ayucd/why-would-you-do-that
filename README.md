@@ -24,5 +24,15 @@ We have an environment where multiple agents of various sizes are suspended with
 
 During the day-time, an agent’s task is to collect as much food as it could. At night, the agents with excess food can choose (depending on their sharing strategy) to share their food with the needy, food-less agents. Only the agents with the larger quantity of food are given the ability to reproduce. If the needy food-less agents are unable to get food even at night, they die. It should be noted that the agents can only ask for food from other agents when they have no food for themselves. 
 
+When it comes to sharing their excess food, our agents can adopt one of the four strategies, depending on the model chosen-
+1. Always cooperative (AC): Agents following this strategy are assigned the maximum probability to share food and get food in return. 
+2. Tit-for-tat (TFT): Agents decide whether they will share their food or not based on the history of the agent-at-mercy (needy agent).
+3. Alternatively cooperate (ALT) - Sharing alternates between cooperativeness and competitiveness for every iteration of gathering food.
+4. Always defective (AD) - Agents following this sharing strategy are assigned the least probability to share the food they have acquired.
+
+
+
+
+
 
 
