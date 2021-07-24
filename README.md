@@ -119,6 +119,16 @@ After every iteration, our s-agents update the global Q-table.
 The s-agents get a **positive reward** if either the population of other agents lowers down as compared to when compared to the previous iteration or its own population increases and vice-versa: thereby making the environment more competitive.
 
 We should also take into account that **the current action of the special agents does not lead to the next state**: there is no relation between the action taken by the special agent and the next state because the next state is only obtained in the next iteration on the Q-table and that is random (since our Q-table is global). But we have tried to overcome this by randomising the probability of the next state according to the population of the herd:
+```
+prob = [0.0,0.0,0.0,0.0,0.0]\
+for key in pop_of_strat.keys():
+   prob[strat_to_num[key]] = float(pop_of_strat[key][-1])/len
+return random.choices(strat_names,prob)[0]
+```
+So, we assume that the next state is correct.
+
+
+
 
 
 
