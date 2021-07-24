@@ -9,10 +9,10 @@ Neuroeconomics seeks to explain human decision making, the ability of an agent t
 #### WEEK 1 : Read about reciprocal altruism and ant-colony-optimization algorithm.
 #### WEEK 2 : Read about the evolutionary game theory; learnt how to work with Pytorch.
 #### WEEK 3 : Designed a model where agents evolve based on certain rules pertaining to reciprocal altruism.
-#### WEEK 4 : Encoded this model on Python [Part A].
+#### WEEK 4 : Encoded this model on Python [Part A](part-a).
 #### WEEK 5 : In-depth reading on deep learning and learnt how to work on neural networks in Python.
 #### WEEK 6 : Read papers on RL, deep RL and multi-agent RL.
-#### WEEK 7 : Involved a QL-tweak to our original Python implementation [Part B]
+#### WEEK 7 : Involved a QL-tweak to our original Python implementation [Part B](part-b).
 
 # Background
 
