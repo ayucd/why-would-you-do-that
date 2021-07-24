@@ -14,3 +14,8 @@ Neuroeconomics seeks to explain human decision making, the ability of an agent t
 #### WEEK 6 : Read papers on RL, deep RL and multi-agent RL.
 #### WEEK 7 : Involved a QL-tweak to our original Python implementation [Part B]
 
+# Model Abstract
+
+Rational decision-making in a multi-agent environment where kin-based altruism does not exist is governed by inferences drawn from the game theory, the social theory as well as conflict theories. Thus, we can say that if we understand these theories and strategies well, the decisions made by the agents can be predicted. Through this project, we are trying to understand the various rational decisions that can be made by an agent in a multi-agent environment by playing with the various modelling parameters. To do this, we set up an environment on Python with multiple agents suspended within it. We have completed this project in two parts, keeping the same environment but changing the decision-making parameters, and each part provides us with thoughtful observations.
+
+
