@@ -83,13 +83,13 @@ A- Size-wise population development for Model 1 (repeated over 44 iterations):
 
 ![Size-wise population development for Model 1](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_sizewise.png)
 
-*We can see that agents following AC and TFT strategies grow in numbers with time. AD and ALT agents see a decline in numbers.*
+*We observe that the environment favoured agents of Size 2 (that are larger, more altruistic towards Size 1) as the environment evolved with this model.*
 
 B- Strategy-wise population development for Model 1 (repeated over 44 iterations):
 
 ![Strategy-wise population development for Model 1](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_strategywise.png)
 
-*We observe that the environment favoured agents of Size 2 (that are larger, more altruistic towards Size 1) as the environment evolved with this model.*
+*We can see that agents following AC and TFT strategies grow in numbers with time. AD and ALT agents see a decline in numbers.*
 
 **MODEL 2**
 
@@ -97,13 +97,13 @@ A- Size-wise population development for Model 2 (repeated over 40 iterations):
 
 ![Size-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m2_sizewise.png)
 
-*We can see that agents following AD strategy grow in numbers with time. AC and ALT agents die down with time*
+*We can see that the agents of Size 1 tend to thrive in this model while the agents of Size 2 (the larger, more altruistic towards Size 1) tend to decline in population.*
 
 B- Strategy-wise population development for Model 2 (repeated over 40 iterations):
 
 ![Strategy-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_strategywise.png)
 
-*We can see that the agents of Size 1 tend to thrive in this model while the agents of Size 2 (the larger, more altruistic towards Size 1) tend to decline in population.*
+*We can see that agents following AD strategy grow in numbers with time. AC and ALT agents die down with time*
 
 # PART B
 ## How will the agent thrive if left in the environment to *learn* an optimal strategy
