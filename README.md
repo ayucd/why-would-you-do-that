@@ -30,6 +30,17 @@ When it comes to sharing their excess food, our agents can adopt one of the four
 3. Alternatively cooperate (ALT) - Sharing alternates between cooperativeness and competitiveness for every iteration of gathering food.
 4. Always defective (AD) - Agents following this sharing strategy are assigned the least probability to share the food they have acquired.
 
+# Python implementation of the environment
+
+Our aim from the Python implementation of this multi-agent environment is to find out which strategy (or strategies) will yield the highest population by the end of our iterations (one iteration is nothing but a pair of consecutive day and night: hence it is an indicator of the time passed since the simulation began). Another thing to observe is to decide which agent size will be having the upper hand in the evolutionary process by the end of our iterations in both models. The implementation has a very probabilistic approach:
+* The agents are initialized with a few attributes like size, id and strategy. The “agent id” is unique for every individual as it reflects the total population that has existed in the environment so far.
+* The environment is modelled as an (n x n) matrix. Each cell in the matrix can host either one unit of food or one agent.
+* Our simulation will have a day and a night in one iteration. In one round of day and night i.e. one iteration, agents get spawned at random places in an empty grid. Similarly, grids are randomly populated with food on a daily basis.
+* The agent that is close to the food gets an advantage over grabbing the food. 
+* No limit is set over the quantity of food that an individual could acquire. This is done deliberately to observe the sharing strategies that the agents will adopt at the end of the day.
+* In cases of conflict, we refer to the priority of directions, which we accomplished by using the breadth-first search (BFS) algorithm. The priority order of the directions is:
+
+
 
 
 
