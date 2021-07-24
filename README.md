@@ -49,7 +49,7 @@ dirn = [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,1),(-1,-1)]
    * Case 3 : Greater than 2 food-values: In this case, the agent is provided with the ability to reproduce. It can decide whether it will reproduce or not based on a fixed probability provided by us for the model.
 
 # PART A  
-##  This part tries to draw conclusions on what sharing strategy thrives the best in our environment
+##  This part tries to bring out which sharing strategy thrives the best in our environment under certain conditions
 
 In this part of the project, all agents are following a fixed sharing policy throughout their lifespan. However, to understand the evolution of the agents better, we decided to split our simulation into two different models:
 
@@ -94,6 +94,35 @@ B- Strategy-wise population development for Model 2 (repeated over 40 iterations
 ![Strategy-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_strategywise.png)
 
 *We can see that the agents of Size 1 tend to thrive in this model while the agents of Size 2 (the larger, more altruistic towards Size 1) tend to decline in population.*
+
+# PART B
+## How will the agent thrive if left in the environment to *learn* an optimal strategy
+In this part of our project, we introduced some “special” agents (s-agents) into our original environment, such that they do not follow a fixed strategy, but “learn” which strategy would be the best for their survival. Of course, the environment still contains the primitive agents that are following fixed strategies from the basket of strategies, throughout their lifespan. 
+
+When with excess food, the s-agents learn an optimal strategy to survive their way through the environment, by estimating which immediate action is available to it at night during the time of sharing in order to achieve evolution. Thus, Part B is different from Part A in the following ways:
+1. Some special agents are allowed to choose their strategies.
+2. There exists no size based distinction in the agents. All agents are assumed to be of Size 2.
+
+Everything else about the agents and the environment in this part is the same as in Part A (environmental parameters etc.)
+
+Thus, our s-agent can meet 5 types of needy agents at night: the agents following AC strategy, agents following the TFT strategy, agents following the ALT strategy, agents following the AD strategy as well as s-agents following the “intelligent” strategy.
+
+### Python implementation
+
+In this implementation, *we are trying to teach our “special” agents how to deal with different strategies*. Our special agent learns this via **Q-learning**. 
+
+For analysing the environment, we train our s-agents (obtain the optimal strategy) and then test it. A Q-table is initialised with (states, actions). The Q-table is global in our case, so as to ensure a larger collection of data to refer to. Here,
+states: the strategy of the needy agent that our s-agent is interacting with.
+actions: strategy chosen by the s-agent to deal with the needy agent.
+After every iteration, our s-agents update the global Q-table.
+
+The s-agents get a **positive reward** if either the population of other agents lowers down as compared to when compared to the previous iteration or its own population increases and vice-versa: thereby making the environment more competitive.
+
+We should also take into account that **the current action of the special agents does not lead to the next state**: there is no relation between the action taken by the special agent and the next state because the next state is only obtained in the next iteration on the Q-table and that is random (since our Q-table is global). But we have tried to overcome this by randomising the probability of the next state according to the population of the herd:
+
+
+
+
 
 
 
