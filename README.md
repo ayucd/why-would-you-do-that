@@ -25,10 +25,10 @@ We have an environment where multiple agents of various sizes are suspended with
 During the day-time, an agent’s task is to collect as much food as it could. At night, the agents with excess food can choose (depending on their sharing strategy) to share their food with the needy, food-less agents. Only the agents with the larger quantity of food are given the ability to reproduce. If the needy food-less agents are unable to get food even at night, they die. It should be noted that the agents can only ask for food from other agents when they have no food for themselves. 
 
 When it comes to sharing their excess food, our agents can adopt one of the four strategies, depending on the model chosen-
-1. Always cooperative (AC): Agents following this strategy are assigned the maximum probability to share food and get food in return. 
-2. Tit-for-tat (TFT): Agents decide whether they will share their food or not based on the history of the agent-at-mercy (needy agent).
-3. Alternatively cooperate (ALT) - Sharing alternates between cooperativeness and competitiveness for every iteration of gathering food.
-4. Always defective (AD) - Agents following this sharing strategy are assigned the least probability to share the food they have acquired.
+1. Always cooperative (AC) : Agents following this strategy are assigned the maximum probability to share food and get food in return. 
+2. Tit-for-tat (TFT) : Agents decide whether they will share their food or not based on the history of the agent-at-mercy (needy agent).
+3. Alternatively cooperate (ALT) : Sharing alternates between cooperativeness and competitiveness for every iteration of gathering food.
+4. Always defective (AD) : Agents following this sharing strategy are assigned the least probability to share the food they have acquired.
 
 # Python implementation of the environment
 
@@ -44,9 +44,12 @@ dirn = [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,1),(-1,-1)]
  ```
  * The agents can possess any number of “food-values” starting from 0. At the end of the day, if the agent has more than 1 food-value, it gets to choose if it prefers to share it with other needy agents or keep just it for itself.
 * Each agent is checked for food at night and three special cases can arise:
-   * Case 1: 0 food-value: If it has no food it is very much likely to get eliminated. It will not get eliminated if it manages to acquire food from a cooperating/sharing agent (see the next case).
-   * Case 2: Greater than 1 food-value: If the agent has more than 1 unit of food, it can decide whether it will share its food or not based on its own strategy; and its decision will also be based upon the past strategies of the agent-at-mercy (needy agent).
-   * Case 3: Greater than 2 food-values: In this case, the agent is provided with the ability to reproduce. It can decide whether it will reproduce or not based on a fixed probability provided by us for the model.
+   * Case 1 : 0 food-value: If it has no food it is very much likely to get eliminated. It will not get eliminated if it manages to acquire food from a cooperating/sharing agent (see the next case).
+   * Case 2 : Greater than 1 food-value: If the agent has more than 1 unit of food, it can decide whether it will share its food or not based on its own strategy; and its decision will also be based upon the past strategies of the agent-at-mercy (needy agent).
+   * Case 3 : Greater than 2 food-values: In this case, the agent is provided with the ability to reproduce. It can decide whether it will reproduce or not based on a fixed probability provided by us for the model.
+
+# PART A : Drawing conclusions on what sharing strategy thrives the best in our environment
+
 
 
 
