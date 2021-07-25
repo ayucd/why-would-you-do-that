@@ -101,7 +101,7 @@ A- Size-wise population development for Model 2 (repeated over 40 iterations):
 
 B- Strategy-wise population development for Model 2 (repeated over 40 iterations):
 
-![Strategy-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m1_strategywise.png)
+![Strategy-wise population development for Model 2](https://github.com/ayucd/why-would-you-do-that/blob/main/partA_m2_strategywise.png)
 
 *We can see that agents following AD strategy grow in numbers with time. AC and ALT agents die down with time*
 
