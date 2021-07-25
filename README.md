@@ -1,4 +1,4 @@
-# Why would you do that?
+# WHY WOULD YOU DO THAT?
 Repository for the BCS-IITK semester project "Why would you do that?" started in June 2021.
 
 # Abstract
