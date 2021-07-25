@@ -158,7 +158,7 @@ B- Strategy-wise population development in our environment:
 
 ![Strategy-wise population development in our environment](https://github.com/ayucd/why-would-you-do-that/blob/main/partB_strategywise.png)
 
-*We see that the AC strategy thrives amongst the overall population, followed by the “intelligent” strategy and then by TFT. The ALT and AD strategies see a decline in their population as the environment evolves.*
+*We see that the TFT strategy thrives amongst the overall population, followed by the “intelligent” strategy and then by ALT and AC. The AD strategy sees a decline in their population as the environment evolves.*
 
 # Conclusions
 
