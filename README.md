@@ -13,8 +13,8 @@ Neuroeconomics seeks to explain human decision making, the ability of an agent t
 2. [Background](#background)
 3. [The Environment](#the-environment)
 4. [Python implementation of the environment](#python-implementation-of-the-environment)
-5. [PART A](#part-a)
-6. [PART B](#part-b)
+5. [Part A](#part-a)
+6. [Part B](#part-b)
 7. [Conclusions](#conclusions)
 8. [References](#references)
 
@@ -62,7 +62,7 @@ dirn = [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,1),(-1,-1)]
    * Case 2 : Greater than 1 food-value: If the agent has more than 1 unit of food, it can decide whether it will share its food or not based on its own strategy; and its decision will also be based upon the past strategies of the agent-at-mercy (needy agent).
    * Case 3 : Greater than 2 food-values: In this case, the agent is provided with the ability to reproduce. It can decide whether it will reproduce or not based on a fixed probability provided by us for the model.
 
-# PART A  
+# Part A  
 ##  This part tries to bring out which sharing strategy thrives the best in our environment under certain conditions
 
 In this part of the project, all agents are following a fixed sharing policy throughout their lifespan. However, to understand the evolution of the agents better, we decided to split our simulation into two different models:
@@ -109,7 +109,7 @@ B- Strategy-wise population development for Model 2 (repeated over 40 iterations
 
 *We can see that agents following AD strategy grow in numbers with time. AC and ALT agents die down with time*
 
-# PART B
+# Part B
 ## How will the agent thrive if left in the environment to *learn* an optimal strategy
 In this part of our project, we introduced some “special” agents (s-agents) into our original environment, such that they do not follow a fixed strategy, but “learn” which strategy would be the best for their survival. Of course, the environment still contains the primitive agents that are following fixed strategies from the basket of strategies, throughout their lifespan. 
 
