@@ -173,10 +173,10 @@ B- Strategy-wise population development in our environment:
 
 # References
 
-1. C. Wickramage and D. N. Ranasinghe, "Modelling altruistic and selfish behavioural properties of Ant Colony Optimisation," 2014 14th International Conference on Advances in ICT for Emerging Regions (ICTer), 2014, pp. 85-90, doi: 10.1109/ICTER.2014.7083884.
-2. Stephens, C. (1996). Modelling Reciprocal Altruism. The British Journal for the Philosophy of Science, 47(4), 533-551. Retrieved June 18, 2021, from [http://www.jstor.org/stable/687923](http://www.jstor.org/stable/687923)
-3. Axelrod, R. (1984). The Evolution of Cooperation. New York: Basic Books.
-4. Li, Yuxi. (2018). Deep Reinforcement Learning. Retrieved July 18, 2021, from [https://arxiv.org/abs/1810.06339v1](https://arxiv.org/abs/1810.06339v1)
+1. *C. Wickramage and D. N. Ranasinghe*, "Modelling altruistic and selfish behavioural properties of Ant Colony Optimisation," 2014 14th International Conference on Advances in ICT for Emerging Regions (ICTer), 2014, pp. 85-90, doi: 10.1109/ICTER.2014.7083884.
+2. *Stephens, C.* (1996). Modelling Reciprocal Altruism. The British Journal for the Philosophy of Science, 47(4), 533-551. Retrieved June 18, 2021, from [http://www.jstor.org/stable/687923](http://www.jstor.org/stable/687923)
+3. *Axelrod, R.* (1984). The Evolution of Cooperation. New York: Basic Books.
+4. *Li, Yuxi*. (2018). Deep Reinforcement Learning. Retrieved July 18, 2021, from [https://arxiv.org/abs/1810.06339v1](https://arxiv.org/abs/1810.06339v1)
 
 
 
