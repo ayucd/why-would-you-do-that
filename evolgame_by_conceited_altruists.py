@@ -460,7 +460,7 @@ print('Testing the policy ->')
 # Create Env
 pop_of_strat = {'AC':[0],'TFT':[0],'ALT':[0],'AD':[0],'none':[0]}
 pop_of_size = {1:[0],2:[0]}
-n2 = 30 # number of agents of each type
+n2 = 50 # number of agents of each type
 foodperday = n2*5
 e = Environment(foodperday=foodperday,repChance=0.5)
 n = 44   #number of iterations
@@ -534,8 +534,8 @@ pop_of_size = {1:[0],2:[0]}
 e = Environment(foodperday=75,repChance=1)
 
 
-n1 = 40   #number of iterations
-n2 = 25   # number of agents of each type
+n1 = 35   #number of iterations
+n2 = 40   # number of agents of each type
 # Initializing agents
 
 agents=[]
