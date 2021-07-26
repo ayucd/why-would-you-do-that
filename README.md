@@ -112,7 +112,7 @@ B- Strategy-wise population development for Model 2 (repeated over 40 iterations
 *We can see that agents following AD strategy grow in numbers with time. AC and ALT agents die down with time*
 
 # Part B
-## How will an agent thrive if left in the environment to *learn* an optimal strategy
+## How will an agent thrive if left in the environment to *learn* an optimal strategy?
 In this part of our project, we introduced some “special” agents (s-agents) into our original environment, such that they do not follow a fixed strategy, but “learn” which strategy would be the best for their survival. Of course, the environment still contains the primitive agents that are following fixed strategies from the basket of strategies, throughout their lifespan. 
 
 When with excess food, the s-agents learn an optimal strategy to survive their way through the environment, by estimating which immediate action is available to it at night during the time of sharing in order to achieve evolution. Thus, Part B is different from Part A in the following ways:
