@@ -17,15 +17,19 @@ We have four types of strategy :
 *   Always Defect (AD) : Least willing to share food.
 """
 
+#!pip install pygame
+
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+import pygame
 
 strat_names = ['AC','TFT','ALT','AD','none']
 basket_of_strat = {'AC':[0.8],'TFT':[],'ALT':[0.6,0.4],'AD':[0.2],'none':[]}
 num_to_strat = {0:'AC',1:'TFT',2:'ALT',3:'AD',4:'none'}
 strat_to_num = {'AC':0,'TFT':1,'ALT':2,'AD':3,'none':4}
-
+gridcolor = (255,128,255)
+foodimg = pygame.image.load('foodimg.png')
 
 class special_Agent():
     def __init__(self,size,Q_table):
@@ -36,6 +40,7 @@ class special_Agent():
         self.food = 0
         self.age = 0
         self.strat_name = 'none'
+        self.color = pygame.image.load('none.png')
         self.strat = basket_of_strat[self.strat_name]
         self.Q = Q_table
         self.reward = 0
@@ -88,6 +93,7 @@ class Agent():
         self.food = 0
         self.age = 0
         self.strat_name = strat
+        self.color = pygame.image.load(f'{self.strat_name}.png')
         self.strat = basket_of_strat[self.strat_name]
         self.hist_strat = self.strat
 
@@ -104,7 +110,7 @@ class Environment():
         We'll test what strategy lead to higher chance of survival of the
         population.
     '''
-    def __init__(self,n=45,foodperday=100,repChance=0.5):
+    def __init__(self,food_threshold=2,n=32,foodperday=100,repChance=0.5):
         '''
             Initializes environment
             n : Env Matrix size
@@ -119,6 +125,8 @@ class Environment():
         self.grid = self.__getEmptyMat()
         self.range = range # Range in which an agent can pick food
         self.curr_total_lived=0
+        self.food_pos = []
+        self.food_threshold = food_threshold
         #self.sp_agentpop = 0 # population count of sp agents
         pop_of_strat = {'AC':[0],'TFT':[0],'ALT':[0],'AD':[0],'none':[0]}
         pop_of_size = {1:[0],2:[0]}
@@ -186,6 +194,7 @@ class Environment():
         '''
         for i in range(self.foodPerDay):
             x,y = self.__chooseXYrand()
+            self.food_pos.append((x,y))
             self.grid[y][x] = -1
         return
     def displayMat(self):
@@ -218,6 +227,8 @@ class Environment():
                         elif i>=0 and j>=0 and i<self.n and j<self.n:
                             if self.grid[i][j] != -1 and self.grid[i][j] != 0:
                                 self.agents[idlist.index(self.grid[i][j])].food+=1;
+                                self.agents[idlist.index(self.grid[i][j])].pos['x'] =  i
+                                self.agents[idlist.index(self.grid[i][j])].pos['y'] =  j
                                 que.clear()
                                 break
                             else:
@@ -291,7 +302,7 @@ class Environment():
                 
         # reproduce
         for agent in self.agents:
-            if agent.food>=2:
+            if agent.food>=self.food_threshold:
                 #*agent.strat[0] if agent.strat !=[] else 0.5
                 tok = int((self.reproductionChance)*100)
                 choices=['reproduce']*(tok)+['sad']*(int(100-tok))
@@ -336,6 +347,7 @@ class Environment():
             Private Method. reset Agent's food numbers and matrix.
         '''
         self.grid = self.__getEmptyMat()
+        self.food_pos = []
         for agent in self.agents:
             agent.food=0
 
@@ -372,6 +384,48 @@ class Environment():
         plt.xticks(x)
         plt.show()
         return
+    
+    def __render(self,k):
+        def population_update():
+            font = pygame.font.Font('freesansbold.ttf', 15)
+            AC = font.render('AC: '+str(pop_of_strat['AC'][-1]),True,(0,0,0))
+            screen.blit(AC,(0,5))
+            TFT = font.render('TFT: '+str(pop_of_strat['TFT'][-1]),True,(0,0,0))
+            screen.blit(TFT,(0,21))
+            ALT = font.render('ALT: '+str(pop_of_strat['ALT'][-1]),True,(0,0,0))
+            screen.blit(ALT,(0,37))
+            AD = font.render('AD: '+str(pop_of_strat['AD'][-1]),True,(0,0,0))
+            screen.blit(AD,(0,53))
+            none = font.render('none: '+str(pop_of_strat['none'][-1]),True,(0,0,0))
+            screen.blit(none,(0,69))
+
+        pygame.init()
+        pygame
+        blockSize = 20 #Set the size of the grid block
+        mode_size = self.n*blockSize
+        screen = pygame.display.set_mode((mode_size,mode_size+100))
+        ref = True
+        while ref:
+            screen.fill((255,255,255))
+            for x in range(mode_size):
+                for y in range(mode_size):
+                    rect = pygame.Rect(x*blockSize, y*blockSize+100,blockSize, blockSize)
+                    pygame.draw.rect(screen, gridcolor, rect, 1)
+            population_update()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    ref = False
+            for agent in self.agents:
+                #print(1)
+                #print(agent.color)
+                screen.blit(agent.color,(agent.pos['x']*blockSize,agent.pos['y']*blockSize+100))
+            if k == 1:
+                for pos in self.food_pos:
+                    x,y = pos
+                    screen.blit(foodimg,(x*blockSize,y*blockSize+100))
+            pygame.display.update()
+            pygame.time.wait(100)
+            ref = False
 
     def iterate(self,t):
         '''
@@ -380,12 +434,20 @@ class Environment():
         '''
         self.__assignPosRand()
         self.__populateFood()
+        if not t:
+            self.__render(1)
         self.__pickFood()
+        if not t:
+            self.__render(2)        
         self.__night()
+        if not t:
+            self.__render(3)
         self.pop_hist.append(self.getPopNumber())
         if t:
             self.__update_Q(self.agents)
+
         self.__resetFood()
+        
     def run(self, num_iterate, train=False):
         '''
             Runs the simulation for `num_iterate` iterations. 
@@ -398,8 +460,8 @@ class Environment():
             if not self.train:
                 print(f'Iteration {i}/{num_iterate}: TotalPopulation = {self.pop_hist[-1]} , Bigfox = {pop_of_size[2][-1]} , Smallfox = {pop_of_size[1][-1]} , sp_fox = {pop_of_strat[num_to_strat[4]][-1]}')
             #, sp_fox = {pop_of_strat['none'][-1]}
-        if not self.train:
-            self.display(num_iterate)
+        #if not self.train:
+         #   self.display(num_iterate)
     def getPopNumber(self):
         '''
             Print current population
@@ -418,7 +480,6 @@ def summary(table):
 """
 
 # Initialize the Q-table with zeros 
-print('Training begins ->')
 Q_table = np.zeros((len(basket_of_strat),len(basket_of_strat)-1))
 pop_of_strat = {'AC':[0],'TFT':[0],'ALT':[0],'AD':[0],'none':[0]}
 pop_of_size = {1:[0],2:[0]}
@@ -426,7 +487,7 @@ pop_of_size = {1:[0],2:[0]}
 # Create Env
 num_agents = 100
 foodperday = 5*num_agents
-e = Environment(foodperday=500,repChance=0.5)
+e = Environment(foodperday=500,repChance=0.7)
 n = 44   #number of iterations
 
 # Initializing agents
@@ -446,7 +507,7 @@ for i in range(num_agents):
 e.setup(agents)
 
 # Run sim to train the agent/policy
-for i in range(10):
+for i in range(5):
     e.run(n,train=True)
 
 # Get Current Population
@@ -456,13 +517,13 @@ summary(Q_table)
 print("Training complete!")
 
 """**Testing the policy**"""
-print('Testing the policy ->')
+
 # Create Env
 pop_of_strat = {'AC':[0],'TFT':[0],'ALT':[0],'AD':[0],'none':[0]}
 pop_of_size = {1:[0],2:[0]}
-n2 = 50 # number of agents of each type
+n2 = 40 # number of agents of each type
 foodperday = n2*5
-e = Environment(foodperday=foodperday,repChance=0.5)
+e = Environment(n=25,foodperday=foodperday,repChance=0.8)
 n = 44   #number of iterations
 #Q_table = np.array([[0,0,0,1],
  #                   [1,0,0,0],
@@ -487,6 +548,7 @@ for i in range(n2):
 e.setup(agents)
 # Run sim
 e.run(n)
+
 # Get Current Population
 print(e.getPopNumber())
 print(summary(Q_table),Q_table)
@@ -499,8 +561,8 @@ print("SIM 1 ->")
 # Create Env
 pop_of_strat = {'AC':[0],'TFT':[0],'ALT':[0],'AD':[0],'none':[0]}
 pop_of_size = {1:[0],2:[0]}
-e = Environment(foodperday=160,repChance=0.5)
-n = 44   #number of iterations
+e = Environment(n=25,foodperday=160,repChance=0.5)
+n = 30   #number of iterations
 
 # Initializing agents
 
@@ -531,11 +593,12 @@ print("SIM 2 ->")
 pop_of_strat = {'AC':[0],'TFT':[0],'ALT':[0],'AD':[0],'none':[0]}
 pop_of_size = {1:[0],2:[0]}
 
-e = Environment(foodperday=75,repChance=1)
-
-
-n1 = 35   #number of iterations
+n1 = 30   #number of iterations
 n2 = 40   # number of agents of each type
+foodperday = n2*3
+
+e = Environment(food_threshold = 3,foodperday=foodperday,repChance=0.8)
+
 # Initializing agents
 
 agents=[]
