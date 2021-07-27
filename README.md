@@ -1,9 +1,11 @@
 # WHY WOULD YOU DO THAT?
 Repository for the BCS-IITK semester project "Why would you do that?" started in June 2021.
 
-#### Contributers: [Ayushi Chaudhary](https://github.com/ayucd), [Siddhant Singh](https://github.com/siddhant7876), [Subiksha Shree S](https://github.com/subiksha-sivakumar)
+#### Contributers: [Ayushi Chaudhary](https://github.com/ayucd), [Siddhant Singh](https://github.com/siddhant7876), [Subiksha Sivakumar](https://github.com/subiksha-sivakumar)
 
 #### Poster of the project: []()
+
+#### Code can be found here: [Evolutionary Game](https://github.com/ayucd/why-would-you-do-that/blob/main/evolgame_by_conceited_altruists.py)
 
 #### PDF version of this documentation can be found at: [Documentation but in PDF](https://github.com/ayucd/why-would-you-do-that/blob/main/Documentation.pdf)
 
