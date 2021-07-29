@@ -30,6 +30,11 @@ num_to_strat = {0:'AC',1:'TFT',2:'ALT',3:'AD',4:'none'}
 strat_to_num = {'AC':0,'TFT':1,'ALT':2,'AD':3,'none':4}
 gridcolor = (255,128,255)
 foodimg = pygame.image.load('foodimg.png')
+AC_img = pygame.image.load('AC.png')
+TFT_img = pygame.image.load('TFT.png')
+ALT_img = pygame.image.load('ALT.png')
+AD_img = pygame.image.load('AD.png')
+none_img = pygame.image.load('none.png')
 
 class special_Agent():
     def __init__(self,size,Q_table):
@@ -389,21 +394,27 @@ class Environment():
         def population_update():
             font = pygame.font.Font('freesansbold.ttf', 15)
             AC = font.render('AC: '+str(pop_of_strat['AC'][-1]),True,(0,0,0))
-            screen.blit(AC,(0,5))
+            screen.blit(AC_img,(0,0))
+            screen.blit(AC,(25,0))
             TFT = font.render('TFT: '+str(pop_of_strat['TFT'][-1]),True,(0,0,0))
-            screen.blit(TFT,(0,21))
+            screen.blit(TFT_img,(0,20))
+            screen.blit(TFT,(25,20))
             ALT = font.render('ALT: '+str(pop_of_strat['ALT'][-1]),True,(0,0,0))
-            screen.blit(ALT,(0,37))
+            screen.blit(ALT_img,(0,40))
+            screen.blit(ALT,(25,40))
             AD = font.render('AD: '+str(pop_of_strat['AD'][-1]),True,(0,0,0))
-            screen.blit(AD,(0,53))
-            none = font.render('none: '+str(pop_of_strat['none'][-1]),True,(0,0,0))
-            screen.blit(none,(0,69))
+            screen.blit(AD_img,(0,60))
+            screen.blit(AD,(25,60))
+            none = font.render('Intelligent: '+str(pop_of_strat['none'][-1]),True,(0,0,0))
+            screen.blit(none_img,(0,80))
+            screen.blit(none,(25,80))
 
         pygame.init()
         pygame
         blockSize = 20 #Set the size of the grid block
         mode_size = self.n*blockSize
         screen = pygame.display.set_mode((mode_size,mode_size+100))
+        pygame.display.set_caption('EVOLUTION GAME')
         ref = True
         while ref:
             screen.fill((255,255,255))
@@ -453,15 +464,14 @@ class Environment():
             Runs the simulation for `num_iterate` iterations. 
         '''
         self.train = train
-        #for i in range(len(self.agents)):
-         #   print(self.agents[i].strat_name)
+
         for i in range(num_iterate):
             self.iterate(self.train)
             if not self.train:
                 print(f'Iteration {i}/{num_iterate}: TotalPopulation = {self.pop_hist[-1]} , Bigfox = {pop_of_size[2][-1]} , Smallfox = {pop_of_size[1][-1]} , sp_fox = {pop_of_strat[num_to_strat[4]][-1]}')
-            #, sp_fox = {pop_of_strat['none'][-1]}
-        #if not self.train:
-         #   self.display(num_iterate)
+
+        if not self.train:
+            self.display(num_iterate)
     def getPopNumber(self):
         '''
             Print current population
@@ -487,26 +497,27 @@ pop_of_size = {1:[0],2:[0]}
 # Create Env
 num_agents = 100
 foodperday = 5*num_agents
-e = Environment(foodperday=500,repChance=0.7)
+e = Environment(foodperday=500,repChance=0.8)
 n = 44   #number of iterations
 
 # Initializing agents
 agents=[]
 for i in range(num_agents):
-    agents.append(Agent(1,'AD'))
+    agents.append(Agent(2,'AD'))
 for i in range(num_agents):
-    agents.append(Agent(1,'AC'))
+    agents.append(Agent(2,'AC'))
 for i in range(num_agents):
-    agents.append(Agent(1,'TFT'))
+    agents.append(Agent(2,'TFT'))
 for i in range(num_agents):
-    agents.append(Agent(1,'ALT'))
+    agents.append(Agent(2,'ALT'))
 for i in range(num_agents):
-    agents.append(special_Agent(1,Q_table))
+    agents.append(special_Agent(2,Q_table))
 
 # pass agents in the env
 e.setup(agents)
 
 # Run sim to train the agent/policy
+print('Training start!')
 for i in range(5):
     e.run(n,train=True)
 
@@ -595,9 +606,9 @@ pop_of_size = {1:[0],2:[0]}
 
 n1 = 30   #number of iterations
 n2 = 40   # number of agents of each type
-foodperday = n2*3
+foodperday = n2*2
 
-e = Environment(food_threshold = 3,foodperday=foodperday,repChance=0.8)
+e = Environment(food_threshold = 2,foodperday=foodperday,repChance=1)
 
 # Initializing agents
 
@@ -606,8 +617,7 @@ for i in range(n2):
     agents.append(Agent(1,'AD'))
 for i in range(n2):
     agents.append(Agent(2,'AC'))
-#for i in range(n2):
- #   agents.append(Agent(1,'TFT'))
+    
 for i in range(n2):
     agents.append(Agent(2,'ALT'))
 
