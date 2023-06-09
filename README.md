@@ -1,4 +1,4 @@
-# WHY WOULD YOU DO THAT?
+# Multi-agent game-theoretic simulation using Reinforcement Learning
 Repository for the BCS-IITK semester project "Why would you do that?" started in June 2021.
 
 #### Contributers: [Ayushi Chaudhary](https://github.com/ayucd), [Siddhant Singh](https://github.com/siddhant7876), [Subiksha Sivakumar](https://github.com/subiksha-sivakumar)
